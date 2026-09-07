@@ -1,32 +1,71 @@
 /* ===============================================================================
    SOC & GRC ECOSYSTEM - SENIOR DEVELOPER TECHNICAL VISUALIZER
-   DESIGN: MINIMALIST, HIGH-CONTRAST NEUTRAL PALETTE (CREAM, GRAPHITE & WHITE)
+   THEMES: LIGHT (CREAM), DIM (SLATE), DARK (OBSIDIAN)
    =============================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700&display=swap');
 
-:root {
-  /* Neutral Color Palette */
+/* --- LIGHT THEME (DEFAULT) --- */
+:root, [data-theme="light"] {
   --bg-page: #F7F5F0;
+  --bg-header: #FFFFFF;
   --bg-sidebar: #FFFFFF;
   --bg-card: #FFFFFF;
-  --bg-code: #161618;
+  --bg-card-header: #FAFAFA;
+  --bg-code: #181715;
+  --bg-hover: #EFECE6;
   
-  /* Accent & Border Colors */
   --border-color: #E2DDD5;
   --border-subtle: #ECE8E0;
   --accent-gold: #C29B38;
   --accent-muted: #8C7330;
   
-  /* Text Colors */
   --text-main: #1A1A1A;
   --text-secondary: #555555;
   --text-muted: #767676;
   --text-code: #F0EFEA;
+}
 
-  /* Typography */
-  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-mono: 'Fira Code', monospace;
+/* --- DIM THEME (SLATE NORD) --- */
+[data-theme="dim"] {
+  --bg-page: #1E222A;
+  --bg-header: #252A34;
+  --bg-sidebar: #252A34;
+  --bg-card: #252A34;
+  --bg-card-header: #2D3340;
+  --bg-code: #181B21;
+  --bg-hover: #323846;
+  
+  --border-color: #3A4150;
+  --border-subtle: #323846;
+  --accent-gold: #E5C07B;
+  --accent-muted: #D19A66;
+  
+  --text-main: #ABB2BF;
+  --text-secondary: #9DA5B4;
+  --text-muted: #6B7280;
+  --text-code: #E06C75;
+}
+
+/* --- DARK THEME (OBSIDIAN) --- */
+[data-theme="dark"] {
+  --bg-page: #0F1117;
+  --bg-header: #161922;
+  --bg-sidebar: #161922;
+  --bg-card: #161922;
+  --bg-card-header: #1E222F;
+  --bg-code: #0A0C10;
+  --bg-hover: #252A3A;
+  
+  --border-color: #2D3345;
+  --border-subtle: #222736;
+  --accent-gold: #D4AF37;
+  --accent-muted: #B8860B;
+  
+  --text-main: #E2E8F0;
+  --text-secondary: #94A3B8;
+  --text-muted: #64748B;
+  --text-code: #F8FAFC;
 }
 
 * {
@@ -38,16 +77,17 @@
 body {
   background-color: var(--bg-page);
   color: var(--text-main);
-  font-family: var(--font-sans);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   line-height: 1.5;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 /* Header */
 .header {
-  background: #FFFFFF;
+  background: var(--bg-header);
   border-bottom: 1px solid var(--border-color);
   padding: 1rem 2rem;
   display: flex;
@@ -67,6 +107,12 @@ body {
   color: var(--text-secondary);
 }
 
+.header-controls {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
 .header-nav {
   display: flex;
   gap: 0.5rem;
@@ -75,7 +121,7 @@ body {
 .nav-btn {
   padding: 0.45rem 0.85rem;
   border: 1px solid var(--border-color);
-  background: #FFFFFF;
+  background: var(--bg-card);
   color: var(--text-secondary);
   border-radius: 4px;
   font-size: 0.8rem;
@@ -85,14 +131,43 @@ body {
 }
 
 .nav-btn:hover {
-  background: var(--bg-page);
+  background: var(--bg-hover);
   color: var(--text-main);
 }
 
 .nav-btn.active {
-  background: var(--text-main);
-  color: #FFFFFF;
-  border-color: var(--text-main);
+  background: var(--accent-gold);
+  color: #111111;
+  border-color: var(--accent-gold);
+  font-weight: 600;
+}
+
+/* Theme Switcher Toggle */
+.theme-switcher {
+  display: flex;
+  background: var(--bg-hover);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 2px;
+  gap: 2px;
+}
+
+.theme-btn {
+  padding: 0.3rem 0.6rem;
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.theme-btn.active {
+  background: var(--bg-card);
+  color: var(--text-main);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
 /* Layout */
@@ -140,21 +215,22 @@ body {
 }
 
 .domain-nav-item:hover {
-  background: var(--bg-page);
+  background: var(--bg-hover);
   color: var(--text-main);
 }
 
 .domain-nav-item.active {
-  background: var(--bg-page);
+  background: var(--bg-hover);
   color: var(--text-main);
   font-weight: 600;
   border-left: 3px solid var(--accent-gold);
 }
 
 .domain-id {
-  font-family: var(--font-mono);
+  font-family: 'Fira Code', monospace;
   font-size: 0.75rem;
   color: var(--accent-muted);
+  font-weight: 700;
 }
 
 /* Main Content */
@@ -164,7 +240,7 @@ body {
 }
 
 .domain-header {
-  background: #FFFFFF;
+  background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: 6px;
   padding: 1.5rem;
@@ -191,7 +267,7 @@ body {
 }
 
 .card {
-  background: #FFFFFF;
+  background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: 6px;
   display: flex;
@@ -206,7 +282,7 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.5px;
   color: var(--text-secondary);
-  background: #FAFAFA;
+  background: var(--bg-card-header);
 }
 
 .card-body {
@@ -224,7 +300,7 @@ body {
 .asset-item {
   padding: 0.5rem 0.65rem;
   border-radius: 4px;
-  font-family: var(--font-mono);
+  font-family: 'Fira Code', monospace;
   font-size: 0.78rem;
   color: var(--text-secondary);
   cursor: pointer;
@@ -233,13 +309,13 @@ body {
 }
 
 .asset-item:hover {
-  background: var(--bg-page);
+  background: var(--bg-hover);
   color: var(--text-main);
 }
 
 .asset-item.active {
-  background: var(--bg-page);
-  color: var(--accent-muted);
+  background: var(--bg-hover);
+  color: var(--accent-gold);
   font-weight: 600;
 }
 
@@ -247,7 +323,7 @@ body {
 .code-box {
   background: var(--bg-code);
   color: var(--text-code);
-  font-family: var(--font-mono);
+  font-family: 'Fira Code', monospace;
   font-size: 0.82rem;
   line-height: 1.6;
   padding: 1rem;
@@ -262,7 +338,7 @@ body {
 
 .line-no {
   width: 36px;
-  color: #555555;
+  color: var(--text-muted);
   user-select: none;
   text-align: right;
   padding-right: 12px;
@@ -276,7 +352,7 @@ body {
 
 /* Tech Overview / Context Box */
 .context-box {
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
 }
 
 .context-label {
@@ -284,8 +360,8 @@ body {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  color: var(--accent-muted);
-  margin-bottom: 0.25rem;
+  color: var(--accent-gold);
+  margin-bottom: 0.35rem;
 }
 
 .context-text {
@@ -303,10 +379,10 @@ body {
 }
 
 .link-item {
-  font-family: var(--font-mono);
+  font-family: 'Fira Code', monospace;
   font-size: 0.75rem;
   color: var(--text-secondary);
-  background: var(--bg-page);
+  background: var(--bg-hover);
   padding: 0.35rem 0.5rem;
   border-radius: 3px;
   border: 1px solid var(--border-subtle);
@@ -314,7 +390,7 @@ body {
 
 /* Full Width Views */
 .view-panel {
-  background: #FFFFFF;
+  background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: 6px;
   padding: 1.5rem;
@@ -332,18 +408,18 @@ body {
   border-bottom: 2px solid var(--border-color);
   font-weight: 600;
   color: var(--text-secondary);
-  background: #FAFAFA;
+  background: var(--bg-card-header);
 }
 
 .table td {
   padding: 0.6rem 0.8rem;
   border-bottom: 1px solid var(--border-subtle);
   color: var(--text-main);
-  font-family: var(--font-mono);
+  font-family: 'Fira Code', monospace;
 }
 
 .table tr:hover td {
-  background: var(--bg-page);
+  background: var(--bg-hover);
 }
 
 .flow-step {
@@ -355,19 +431,20 @@ body {
   grid-template-columns: 60px 180px 1fr;
   align-items: center;
   gap: 1rem;
-  background: #FFFFFF;
+  background: var(--bg-card);
 }
 
 .flow-step-id {
-  font-family: var(--font-mono);
+  font-family: 'Fira Code', monospace;
   font-weight: 700;
-  color: var(--accent-muted);
+  color: var(--accent-gold);
   font-size: 1.1rem;
 }
 
 .flow-step-name {
   font-weight: 600;
   font-size: 0.9rem;
+  color: var(--text-main);
 }
 
 .flow-step-text {
@@ -375,7 +452,6 @@ body {
   color: var(--text-secondary);
 }
 
-/* Responsive */
 @media (max-width: 1024px) {
   .workspace-grid {
     grid-template-columns: 1fr;

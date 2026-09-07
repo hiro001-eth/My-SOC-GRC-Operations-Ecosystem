@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,12 +15,21 @@
       <p>Architecture Reference & Detection Rule Explorer</p>
     </div>
     
-    <nav class="header-nav">
-      <button class="nav-btn active" data-view="workspace">Domains & Rules</button>
-      <button class="nav-btn" data-view="flow">Data Flow</button>
-      <button class="nav-btn" data-view="mitre">MITRE ATT&CK</button>
-      <button class="nav-btn" data-view="logs">EVTX Log Samples</button>
-    </nav>
+    <div class="header-controls">
+      <nav class="header-nav">
+        <button class="nav-btn active" data-view="workspace">Domains & Rules</button>
+        <button class="nav-btn" data-view="flow">Data Flow</button>
+        <button class="nav-btn" data-view="mitre">MITRE ATT&CK</button>
+        <button class="nav-btn" data-view="logs">EVTX Log Samples</button>
+      </nav>
+
+      <!-- Theme Switcher -->
+      <div class="theme-switcher">
+        <button class="theme-btn active" data-theme="light">Light</button>
+        <button class="theme-btn" data-theme="dim">Dim</button>
+        <button class="theme-btn" data-theme="dark">Dark</button>
+      </div>
+    </div>
   </header>
 
   <!-- Main Layout -->

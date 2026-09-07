@@ -1,6 +1,6 @@
 /* ===============================================================================
    SOC & GRC ECOSYSTEM - ARCHITECTURE DATA & ENGINE
-   PURE TECHNICAL DATA STORE & MINIMALIST VISUALIZER ENGINE
+   PURE TECHNICAL DATA STORE & VISUALIZER ENGINE
    =============================================================================== */
 
 const REPO_DATA = {
@@ -8,7 +8,7 @@ const REPO_DATA = {
     {
       id: "01",
       name: "01 - Data Sources and Ingestion",
-      shortName: "01 Data Ingestion",
+      shortName: "Data Ingestion",
       description: "Log source inventories, Sysmon endpoint configuration, and log forwarding topologies.",
       files: [
         {
@@ -86,7 +86,7 @@ output.elasticsearch:
     {
       id: "02",
       name: "02 - Normalization and Parsing",
-      shortName: "02 Normalization",
+      shortName: "Normalization",
       description: "Canonical field dictionary and Grok parsers mapping vendor logs to ECS & OCSF.",
       files: [
         {
@@ -113,7 +113,7 @@ output.elasticsearch:
     {
       id: "03",
       name: "03 - Detection Engineering",
-      shortName: "03 Detection Engineering",
+      shortName: "Detection Engineering",
       description: "Detection-as-Code repository: Sigma YAML rules, KQL queries, YARA rules, and Atomic Red Team tests.",
       files: [
         {
@@ -171,7 +171,7 @@ atomic_tests:
     {
       id: "04",
       name: "04 - Alert Lifecycle and Triage",
-      shortName: "04 Alert Triage",
+      shortName: "Alert Triage",
       description: "Severity SLAs (P1-P4), Tier 1-3 analyst SOP checklists, and shift handover protocols.",
       files: [
         {
@@ -201,7 +201,7 @@ atomic_tests:
     {
       id: "05",
       name: "05 - Threat Hunting",
-      shortName: "05 Threat Hunting",
+      shortName: "Threat Hunting",
       description: "PEAK methodology hunt hypotheses, KQL hunt queries, and Jupyter notebook analysis.",
       files: [
         {
@@ -218,7 +218,7 @@ Data Sources Needed: Sysmon Event ID 7 (Image Loaded), Sysmon Event ID 1 (Proces
     {
       id: "06",
       name: "06 - Threat Intelligence and IOCs",
-      shortName: "06 Threat Intel",
+      shortName: "Threat Intel",
       description: "IOC blocklists, MITRE ATT&CK coverage heatmap, and threat actor profiles.",
       files: [
         {
@@ -237,7 +237,7 @@ Data Sources Needed: Sysmon Event ID 7 (Image Loaded), Sysmon Event ID 1 (Proces
     {
       id: "07",
       name: "07 - Incident Response and SOAR",
-      shortName: "07 Incident Response",
+      shortName: "Incident Response",
       description: "Emergency playbooks (Credential Dumping, Ransomware) and Python containment scripts.",
       files: [
         {
@@ -258,7 +258,7 @@ def isolate_endpoint(agent_id, api_token):
     {
       id: "08",
       name: "08 - Forensics and Artefacts",
-      shortName: "08 Forensics",
+      shortName: "Forensics",
       description: "Technical DFIR cheat sheets for Volatility 3, EVTX carving, and network PCAPs.",
       files: [
         {
@@ -276,8 +276,8 @@ def isolate_endpoint(agent_id, api_token):
     {
       id: "09",
       name: "09 - Evidence Management",
-      shortName: "09 Evidence Locker",
-      purpose: "Legal chain of custody and SHA-256 evidence integrity logs.",
+      shortName: "Evidence Locker",
+      description: "Legal chain of custody logging and SHA-256 evidence integrity logs.",
       files: [
         {
           path: "09-EVIDENCE-MANAGEMENT/chain-of-custody/custody-log-template.md",
@@ -294,7 +294,7 @@ SHA-256 Hash: 0bf5ee2bb8beb0814f17f1d76249565937ea6263242193848fac6c6eb69f6049`
     {
       id: "10",
       name: "10 - Metrics, KPIs, and Reporting",
-      shortName: "10 Metrics & KPIs",
+      shortName: "Metrics & KPIs",
       description: "MTTD and MTTR performance dashboard specifications and CISO reports.",
       files: [
         {
@@ -311,7 +311,7 @@ Target MTTR (Mean Time to Respond): < 45 Minutes for containment`
     {
       id: "11",
       name: "11 - GRC, Audit, and Compliance",
-      shortName: "11 GRC & Compliance",
+      shortName: "GRC & Compliance",
       description: "Compliance evidence mapping linking telemetry to SOC 2 Type II, ISO 27001, and NIST CSF 2.0.",
       files: [
         {
@@ -352,6 +352,7 @@ document.addEventListener("DOMContentLoaded", () => {
   renderSidebar();
   renderDomain(activeDomainId, 0);
   bindNavButtons();
+  bindThemeButtons();
 });
 
 function renderSidebar() {
@@ -411,7 +412,7 @@ function renderDomain(domainId, fileIdx) {
     `).join("");
 
     codeViewerEl.innerHTML = `
-      <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-secondary); margin-bottom: 0.5rem;">
+      <div style="font-family: 'Fira Code', monospace; font-size: 0.75rem; color: var(--text-secondary); margin-bottom: 0.5rem;">
         ${file.path}
       </div>
       <div class="code-box">${formatted}</div>
@@ -447,6 +448,18 @@ function bindNavButtons() {
       btns.forEach(b => b.classList.remove("active"));
       btn.classList.add("active");
       showView(btn.dataset.view);
+    });
+  });
+}
+
+function bindThemeButtons() {
+  const btns = document.querySelectorAll(".theme-btn");
+  btns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      btns.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      const theme = btn.dataset.theme;
+      document.documentElement.setAttribute("data-theme", theme);
     });
   });
 }
