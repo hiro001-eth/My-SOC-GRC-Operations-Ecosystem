@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SOC & GRC Operations Ecosystem | Interactive Web Visualizer</title>
+  <meta name="description" content="Production-grade SOC & GRC Operations Ecosystem visualizer displaying 11 operational domains, Detection-as-Code rules, MITRE ATT&CK coverage, and live log inspectors.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Header Banner -->
+  <header class="site-header">
+    <div class="brand-title">
+      <div class="brand-icon">SG</div>
+      <div class="brand-text">
+        <h1>SOC & GRC Operations Ecosystem</h1>
+        <p>Interactive Architecture & Operational Visualizer</p>
+      </div>
+    </div>
+    
+    <div class="header-controls">
+      <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="searchInput" placeholder="Search rules, domains, files...">
+      </div>
+      <span class="header-badge">Production Architecture</span>
+    </div>
+  </header>
+
+  <!-- Main Container Grid -->
+  <div class="main-container">
+    
+    <!-- Sidebar Domain Selector -->
+    <aside class="sidebar">
+      <div class="view-tabs">
+        <button class="tab-btn active" data-view="workspace">Workspace</button>
+        <button class="tab-btn" data-view="flow">Data Flow</button>
+        <button class="tab-btn" data-view="mitre">MITRE Map</button>
+        <button class="tab-btn" data-view="logs">Log Explorer</button>
+      </div>
+
+      <div class="section-label">Operational Domains (01 - 11)</div>
+      <ul class="domain-list" id="domainList">
+        <!-- Rendered dynamically by app.js -->
+      </ul>
+    </aside>
+
+    <!-- Main Viewport -->
+    <main class="viewport">
+      
+      <!-- Domain Overview Banner Card -->
+      <section class="domain-overview-card" id="domainOverview">
+        <!-- Rendered dynamically by app.js -->
+      </section>
+
+      <!-- Workspace View (Panel Grid) -->
+      <div class="workspace-grid" id="workspaceView">
+        
+        <!-- Panel 1: Domain File Directory -->
+        <div class="panel">
+          <div class="panel-header">
+            <div class="panel-title">
+              <span>📁</span> Domain Assets
+            </div>
+          </div>
+          <div class="panel-body">
+            <ul class="file-list" id="fileList">
+              <!-- Rendered dynamically by app.js -->
+            </ul>
+          </div>
+        </div>
+
+        <!-- Panel 2: Live Code & Rule Inspector -->
+        <div class="panel code-inspector-panel">
+          <div class="panel-header">
+            <div class="panel-title">
+              <span>📄</span> Live Code & Asset Inspector
+            </div>
+          </div>
+          <div class="panel-body" id="codeInspector">
+            <!-- Rendered dynamically by app.js -->
+          </div>
+        </div>
+
+        <!-- Panel 3: AI Operational Narrator & Connection Guide -->
+        <div class="panel narrator-panel">
+          <div class="panel-header narrator-header">
+            <div class="panel-title">
+              <span>🧠</span> AI Operational Narrator
+            </div>
+          </div>
+          <div class="panel-body" id="narratorContent">
+            <!-- Rendered dynamically by app.js -->
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Flow Graph View -->
+      <div class="panel full-width-panel" id="flowGraphView" style="display: none;">
+        <div class="panel-header">
+          <div class="panel-title">
+            <span>🔄</span> End-to-End Operational Data Flow (Domains 01 to 11)
+          </div>
+        </div>
+        <div class="panel-body">
+          <div class="flow-graph-container" id="flowGraphContent">
+            <!-- Rendered dynamically by app.js -->
+          </div>
+        </div>
+      </div>
+
+      <!-- MITRE ATT&CK Heatmap View -->
+      <div class="panel full-width-panel" id="mitreView" style="display: none;">
+        <div class="panel-header">
+          <div class="panel-title">
+            <span>🎯</span> MITRE ATT&CK Detection Coverage Matrix
+          </div>
+        </div>
+        <div class="panel-body">
+          <div class="mitre-grid" id="mitreGridContent">
+            <!-- Rendered dynamically by app.js -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Log Explorer View -->
+      <div class="panel full-width-panel" id="logExplorerView" style="display: none;">
+        <div class="panel-header">
+          <div class="panel-title">
+            <span>🔍</span> Sample Log Analysis (EVTX Event Log Inspector)
+          </div>
+        </div>
+        <div class="panel-body" id="logExplorerContent">
+          <!-- Rendered dynamically by app.js -->
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div>Master SOC & GRC Operations Ecosystem | Production Web Visualizer</div>
+    <div>Theme: Luxury Cream & Metallic Gold | High Readability System</div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
