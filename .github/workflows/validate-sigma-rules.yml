@@ -1,0 +1,9 @@
+# ===============================================================================
+# FILE PATH: .github/workflows/validate-sigma-rules.yml
+# SEGMENT: Detection-as-Code CI/CD Pipeline
+# PURPOSE: Automated GitHub Actions workflow for linting, syntax checking, and PySigma validation of all Sigma rule YAML files prior to production deployment.
+# CONNECTED WORKFLOWS:
+#   - Validates rules in 03-DETECTION-ENGINEERING/sigma/ and logs deployment approvals in 11-GRC-AUDIT-AND-COMPLIANCE/audit-evidence-locker/change-management-logs/
+# ===============================================================================
+
+# [USER TODO: WRITE YOUR CUSTOM RULE / CONFIGURATION HERE]

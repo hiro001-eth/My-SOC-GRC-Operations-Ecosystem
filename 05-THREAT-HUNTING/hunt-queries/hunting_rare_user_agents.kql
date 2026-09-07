@@ -1,0 +1,9 @@
+// ===============================================================================
+// FILE PATH: 05-THREAT-HUNTING/hunt-queries/hunting_rare_user_agents.kql
+// SEGMENT: 05-THREAT-HUNTING / Hunting Query Repository
+// PURPOSE: KQL query template for frequency stacking rare web user-agents across HTTP proxy telemetry.
+// CONNECTED WORKFLOWS:
+//   - Queries raw network log sources cataloged in 01-DATA-SOURCES-AND-INGESTION/
+// ===============================================================================
+
+// [USER TODO: WRITE YOUR CUSTOM KQL QUERY HERE]

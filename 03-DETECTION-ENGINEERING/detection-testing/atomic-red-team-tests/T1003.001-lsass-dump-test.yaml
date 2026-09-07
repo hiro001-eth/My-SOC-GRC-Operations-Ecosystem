@@ -1,0 +1,9 @@
+# ===============================================================================
+# FILE PATH: 03-DETECTION-ENGINEERING/detection-testing/atomic-red-team-tests/T1003.001-lsass-dump-test.yaml
+# SEGMENT: 03-DETECTION-ENGINEERING / Adversary Emulation Testing
+# PURPOSE: Atomic Red Team test execution plan for simulating OS Credential Dumping (T1003.001) to validate SIEM rule efficacy.
+# CONNECTED WORKFLOWS:
+#   - Validates detection rules in 03-DETECTION-ENGINEERING/sigma/windows/ and 03-DETECTION-ENGINEERING/kql/privilege-escalation/
+# ===============================================================================
+
+# [USER TODO: WRITE YOUR CUSTOM RULE / CONFIGURATION HERE]

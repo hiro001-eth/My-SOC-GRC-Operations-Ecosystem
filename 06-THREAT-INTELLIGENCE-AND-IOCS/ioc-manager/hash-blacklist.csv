@@ -1,0 +1,5 @@
+# FILE PATH: 06-THREAT-INTELLIGENCE-AND-IOCS/ioc-manager/hash-blacklist.csv
+# SEGMENT: 06-THREAT-INTELLIGENCE-AND-IOCS / File Hash Manager
+# PURPOSE: CSV repository for malicious SHA-256 / MD5 file hashes associated with ransomware droppers and RAT payloads.
+# CONNECTED WORKFLOWS: Loaded into EDR blocklists and YARA scans in 08-FORENSICS-AND-ARTEFACTS/
+# USER TODO: ADD YOUR CUSTOM DATA ENTRIES BELOW (CSV DATA ONLY)

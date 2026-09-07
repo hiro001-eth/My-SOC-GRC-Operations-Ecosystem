@@ -1,0 +1,9 @@
+# ===============================================================================
+# FILE PATH: 01-DATA-SOURCES-AND-INGESTION/collectors-and-agents/vector/vector.yaml
+# SEGMENT: 01-DATA-SOURCES-AND-INGESTION / Vector Aggregator Config
+# PURPOSE: Vector agent configuration for high-throughput log collection, field re-mapping, and bulk ingestion into OpenSearch / Sentinel.
+# CONNECTED WORKFLOWS:
+#   - Normalizes incoming events against schemas in 02-NORMALIZATION-AND-PARSING/
+# ===============================================================================
+
+# [USER TODO: WRITE YOUR CUSTOM RULE / CONFIGURATION HERE]

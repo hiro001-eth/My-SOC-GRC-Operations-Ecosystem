@@ -1,0 +1,9 @@
+# ===============================================================================
+# FILE PATH: 03-DETECTION-ENGINEERING/sigma/windows/proc_creation_win_mimikatz_cmdline.yml
+# SEGMENT: 03-DETECTION-ENGINEERING / Windows Sigma Detections
+# PURPOSE: Sigma rule template for detecting command-line credential dumping tools (Mimikatz, LsaDump, Sekurlsa).
+# CONNECTED WORKFLOWS:
+#   - Tested by 03-DETECTION-ENGINEERING/detection-testing/atomic-red-team-tests/T1003.001-lsass-dump-test.yaml and mapped in 06-THREAT-INTELLIGENCE-AND-IOCS/mitre-attack-mapping/coverage-matrix.md
+# ===============================================================================
+
+# [USER TODO: WRITE YOUR CUSTOM RULE / CONFIGURATION HERE]

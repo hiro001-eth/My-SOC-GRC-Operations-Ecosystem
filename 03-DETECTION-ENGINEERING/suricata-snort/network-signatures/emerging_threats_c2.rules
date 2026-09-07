@@ -1,0 +1,9 @@
+# ===============================================================================
+# FILE PATH: 03-DETECTION-ENGINEERING/suricata-snort/network-signatures/emerging_threats_c2.rules
+# SEGMENT: 03-DETECTION-ENGINEERING / Suricata NIDS Signatures
+# PURPOSE: Suricata network rule template for capturing Cobalt Strike Malleable HTTP C2 beaconing patterns and user-agent anomalies.
+# CONNECTED WORKFLOWS:
+#   - Parses packet streams analyzed in 08-FORENSICS-AND-ARTEFACTS/network-forensics/pcap-analysis/
+# ===============================================================================
+
+# [USER TODO: WRITE YOUR CUSTOM SURICATA / SNORT RULE HERE]

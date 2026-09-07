@@ -1,0 +1,9 @@
+// ===============================================================================
+// FILE PATH: 03-DETECTION-ENGINEERING/kql/persistence/registry_runkeys_modification.kql
+// SEGMENT: 03-DETECTION-ENGINEERING / KQL Persistence Detections
+// PURPOSE: KQL query template for detecting modifications to Windows Registry Run and RunOnce keys for persistence (T1547.001).
+// CONNECTED WORKFLOWS:
+//   - Verified during incident investigations in 04-ALERT-LIFECYCLE-AND-TRIAGE/triage-guides/tier1-triage-checklist.md
+// ===============================================================================
+
+// [USER TODO: WRITE YOUR CUSTOM KQL QUERY HERE]

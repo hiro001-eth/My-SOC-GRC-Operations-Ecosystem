@@ -1,0 +1,5 @@
+# FILE PATH: 06-THREAT-INTELLIGENCE-AND-IOCS/ioc-manager/ip-reputation.csv
+# SEGMENT: 06-THREAT-INTELLIGENCE-AND-IOCS / Malicious IP Manager
+# PURPOSE: CSV repository for active C2 IP addresses, malicious proxies, and scanner nodes used for automated SIEM alert enrichment.
+# CONNECTED WORKFLOWS: Referenced by firewall blocklists and triage lookup scripts in 04-ALERT-LIFECYCLE-AND-TRIAGE/
+# USER TODO: ADD YOUR CUSTOM DATA ENTRIES BELOW (CSV DATA ONLY)

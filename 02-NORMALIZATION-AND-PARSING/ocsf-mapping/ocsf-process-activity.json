@@ -1,0 +1,3 @@
+{
+  "_comment": "FILE PATH: 02-NORMALIZATION-AND-PARSING/ocsf-mapping/ocsf-process-activity.json | SEGMENT: 02-NORMALIZATION-AND-PARSING / OCSF Class Mapping | PURPOSE: Open Cybersecurity Schema Framework (OCSF) Class 1007 (Process Activity) JSON field mapping standard. | CONNECTED WORKFLOWS: Maps raw process telemetry to vendor-agnostic OCSF fields. | USER TODO: ADD YOUR CUSTOM JSON SCHEMA HERE"
+}

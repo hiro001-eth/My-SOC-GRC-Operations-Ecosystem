@@ -1,0 +1,9 @@
+# ===============================================================================
+# FILE PATH: 03-DETECTION-ENGINEERING/sigma/cloud/aws_unusual_root_login.yml
+# SEGMENT: 03-DETECTION-ENGINEERING / Cloud IAM Sigma Detections
+# PURPOSE: Sigma rule template for detecting successful AWS Root Account console logins performed without Multi-Factor Authentication (MFA).
+# CONNECTED WORKFLOWS:
+#   - Monitors AWS CloudTrail log sources defined in 01-DATA-SOURCES-AND-INGESTION/log-inventory/cloud-logs-aws-gcp-azure.md
+# ===============================================================================
+
+# [USER TODO: WRITE YOUR CUSTOM RULE / CONFIGURATION HERE]

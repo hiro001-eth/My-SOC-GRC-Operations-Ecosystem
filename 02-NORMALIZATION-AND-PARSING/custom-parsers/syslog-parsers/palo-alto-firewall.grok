@@ -1,0 +1,9 @@
+# ===============================================================================
+# FILE PATH: 02-NORMALIZATION-AND-PARSING/custom-parsers/syslog-parsers/palo-alto-firewall.grok
+# SEGMENT: 02-NORMALIZATION-AND-PARSING / Custom Syslog Parser
+# PURPOSE: Grok pattern definitions for parsing raw Palo Alto firewall traffic, threat, and URL filtering log strings.
+# CONNECTED WORKFLOWS:
+#   - Loaded into Logstash/Vector pipelines in 01-DATA-SOURCES-AND-INGESTION/collectors-and-agents/
+# ===============================================================================
+
+# [USER TODO: WRITE YOUR CUSTOM GROK PARSER PATTERNS HERE]

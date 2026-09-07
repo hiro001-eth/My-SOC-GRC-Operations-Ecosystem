@@ -1,0 +1,9 @@
+// ===============================================================================
+// FILE PATH: 03-DETECTION-ENGINEERING/kql/process-execution/suspicious_cmd_parent_child.kql
+// SEGMENT: 03-DETECTION-ENGINEERING / KQL Process Execution Rules
+// PURPOSE: KQL query template for detecting cmd.exe spawning encoded PowerShell processes in Microsoft Defender / Sentinel.
+// CONNECTED WORKFLOWS:
+//   - Validated by .github/workflows/kql-lint-check.yml and monitored by Tier 1 in 04-ALERT-LIFECYCLE-AND-TRIAGE/
+// ===============================================================================
+
+// [USER TODO: WRITE YOUR CUSTOM KQL QUERY HERE]

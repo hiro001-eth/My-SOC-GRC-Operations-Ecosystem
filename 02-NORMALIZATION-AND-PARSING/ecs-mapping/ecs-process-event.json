@@ -1,0 +1,3 @@
+{
+  "_comment": "FILE PATH: 02-NORMALIZATION-AND-PARSING/ecs-mapping/ecs-process-event.json | SEGMENT: 02-NORMALIZATION-AND-PARSING / ECS Field Mapping | PURPOSE: Elastic Common Schema (ECS) process creation event JSON specification for standardizing process.name, process.command_line, and user.name. | CONNECTED WORKFLOWS: Used by SIEM indexing pipelines and rule authors in 03-DETECTION-ENGINEERING/ | USER TODO: ADD YOUR CUSTOM JSON SCHEMA HERE"
+}

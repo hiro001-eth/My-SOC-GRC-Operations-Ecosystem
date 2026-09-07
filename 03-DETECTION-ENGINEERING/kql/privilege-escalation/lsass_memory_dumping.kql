@@ -1,0 +1,9 @@
+// ===============================================================================
+// FILE PATH: 03-DETECTION-ENGINEERING/kql/privilege-escalation/lsass_memory_dumping.kql
+// SEGMENT: 03-DETECTION-ENGINEERING / KQL Privilege Escalation Detections
+// PURPOSE: KQL query template for detecting process memory access and dumping against lsass.exe via comsvcs.dll or rundll32.
+// CONNECTED WORKFLOWS:
+//   - Triggers P1 critical incident playbook in 07-INCIDENT-RESPONSE-AND-SOAR/incident-playbooks/credential-dumping-playbook.md
+// ===============================================================================
+
+// [USER TODO: WRITE YOUR CUSTOM KQL QUERY HERE]

@@ -1,0 +1,11 @@
+<!--
+===============================================================================
+FILE PATH: 01-DATA-SOURCES-AND-INGESTION/log-inventory/sysmon-configs/sysmonconfig-export.xml
+SEGMENT: 01-DATA-SOURCES-AND-INGESTION / Endpoint Agent Configuration
+PURPOSE: Production Sysmon XML configuration schema defining process creation filtering, hash calculation algorithms, and LSASS memory access rules.
+CONNECTED WORKFLOWS:
+  - Generates telemetry cataloged in 01-DATA-SOURCES-AND-INGESTION/log-inventory/windows-event-logs.md
+===============================================================================
+-->
+
+<!-- [USER TODO: WRITE YOUR CUSTOM XML AGENT CONFIGURATION HERE] -->

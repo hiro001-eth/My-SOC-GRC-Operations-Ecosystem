@@ -1,0 +1,9 @@
+# ===============================================================================
+# FILE PATH: 03-DETECTION-ENGINEERING/sigma/linux/proc_creation_lnx_reversed_shell.yml
+# SEGMENT: 03-DETECTION-ENGINEERING / Linux Sigma Detections
+# PURPOSE: Sigma rule template for detecting interactive Linux bash, netcat, and pseudo-terminal reverse shells.
+# CONNECTED WORKFLOWS:
+#   - Parses Linux telemetry from 01-DATA-SOURCES-AND-INGESTION/log-inventory/ and auditd logs
+# ===============================================================================
+
+# [USER TODO: WRITE YOUR CUSTOM RULE / CONFIGURATION HERE]

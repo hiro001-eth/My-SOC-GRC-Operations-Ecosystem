@@ -1,0 +1,9 @@
+# ===============================================================================
+# FILE PATH: .github/workflows/kql-lint-check.yml
+# SEGMENT: Detection-as-Code CI/CD Pipeline
+# PURPOSE: Automated GitHub Actions workflow for validating KQL syntax and Microsoft Sentinel / Defender operator structures.
+# CONNECTED WORKFLOWS:
+#   - Validates queries in 03-DETECTION-ENGINEERING/kql/ before production commit.
+# ===============================================================================
+
+# [USER TODO: WRITE YOUR CUSTOM RULE / CONFIGURATION HERE]

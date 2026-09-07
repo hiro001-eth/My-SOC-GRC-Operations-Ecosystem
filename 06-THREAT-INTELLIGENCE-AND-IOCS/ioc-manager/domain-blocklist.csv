@@ -1,0 +1,5 @@
+# FILE PATH: 06-THREAT-INTELLIGENCE-AND-IOCS/ioc-manager/domain-blocklist.csv
+# SEGMENT: 06-THREAT-INTELLIGENCE-AND-IOCS / Domain Blocklist
+# PURPOSE: CSV repository for active phishing domains and C2 URLs used for automated proxy and DNS sinkhole blocking.
+# CONNECTED WORKFLOWS: Feeds block rules to network firewalls and email gateways
+# USER TODO: ADD YOUR CUSTOM DATA ENTRIES BELOW (CSV DATA ONLY)
