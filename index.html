@@ -3,120 +3,110 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SOC & GRC Operations Ecosystem Architecture</title>
+  <title>SOC & GRC Operations Ecosystem | Manjil Katuwal</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- Top Header Navigation -->
+  <!-- Top Header Navigation Bar -->
   <header class="header">
-    <div class="header-title">
+    <div class="header-brand">
       <h1>SOC & GRC Operations Ecosystem</h1>
-      <p>Architecture Reference & Detection Rule Explorer</p>
     </div>
     
-    <div class="header-controls">
-      <nav class="header-nav">
-        <button class="nav-btn active" data-view="workspace">Domains & Rules</button>
-        <button class="nav-btn" data-view="flow">Data Flow</button>
-        <button class="nav-btn" data-view="mitre">MITRE ATT&CK</button>
-        <button class="nav-btn" data-view="logs">EVTX Log Samples</button>
-      </nav>
-
-      <!-- Theme Switcher -->
-      <div class="theme-switcher">
-        <button class="theme-btn active" data-theme="light">Light</button>
-        <button class="theme-btn" data-theme="dim">Dim</button>
-        <button class="theme-btn" data-theme="dark">Dark</button>
-      </div>
-    </div>
+    <nav class="header-nav">
+      <button class="nav-btn active" data-view="workspace">Domains & Architecture</button>
+      <button class="nav-btn" data-view="logs">Log Converter</button>
+    </nav>
   </header>
 
-  <!-- Main Layout -->
-  <div class="layout">
+  <!-- Fullscreen Resizable IDE Layout Container -->
+  <div class="ide-container" id="ideContainer">
     
-    <!-- Sidebar -->
-    <aside class="sidebar">
-      <div class="sidebar-title">Operational Domains</div>
-      <ul class="domain-nav" id="domainNav">
-        <!-- Rendered by app.js -->
-      </ul>
+    <!-- Left Sidebar: Unified Folder & File Tree Navigator -->
+    <aside class="ide-pane sidebar-pane" id="pane1">
+      <div class="pane-header" id="sidebarTitle">REPOSITORY EXPLORER</div>
+      <div class="pane-content" style="padding: 0.5rem 0.25rem;">
+        <ul class="repo-tree-list" id="repoTreeNav">
+          <!-- Rendered by app.js via /api/tree -->
+        </ul>
+      </div>
     </aside>
 
-    <!-- Main Content Area -->
-    <main class="content">
+    <!-- Drag Resizer Handle 1 -->
+    <div class="resizer" id="resizer1"></div>
+
+    <!-- Workspace View (Code Viewer + Architectural Context) -->
+    <div class="ide-workspace" id="workspaceView">
       
-      <!-- Domain Title & Summary Header -->
-      <div class="domain-header" id="domainHeader">
-        <!-- Rendered by app.js -->
-      </div>
-
-      <!-- Domain & Asset Workspace -->
-      <div class="workspace-grid" id="workspaceView">
-        
-        <!-- Files Panel -->
-        <div class="card">
-          <div class="card-header">Domain Files</div>
-          <div class="card-body">
-            <ul class="asset-list" id="assetList">
-              <!-- Rendered by app.js -->
-            </ul>
-          </div>
-        </div>
-
-        <!-- Code / Rule Viewer -->
-        <div class="card">
-          <div class="card-header">File Content</div>
-          <div class="card-body" id="codeViewer">
-            <!-- Rendered by app.js -->
-          </div>
-        </div>
-
-        <!-- Technical Context & Links -->
-        <div class="card">
-          <div class="card-header">Technical Context</div>
-          <div class="card-body" id="contextViewer">
-            <!-- Rendered by app.js -->
-          </div>
-        </div>
-
-      </div>
-
-      <!-- End-to-End Data Flow View -->
-      <div class="view-panel" id="flowView" style="display: none;">
-        <div class="domain-header">
-          <h2>End-to-End Pipeline Data Flow</h2>
-          <p>Operational path from raw log telemetry down to compliance evidence verification.</p>
-        </div>
-        <div id="flowContent">
+      <!-- Middle Pane: Live Code & File Viewer -->
+      <div class="ide-pane code-pane" id="pane2">
+        <div class="pane-header" id="codeViewerTitle">FILE CONTENT</div>
+        <div class="pane-content code-content-box" id="codeViewer">
           <!-- Rendered by app.js -->
         </div>
       </div>
 
-      <!-- MITRE ATT&CK Coverage View -->
-      <div class="view-panel" id="mitreView" style="display: none;">
-        <div class="domain-header">
-          <h2>MITRE ATT&CK Technique Mapping</h2>
-          <p>Rule coverage across adversary tactics and techniques.</p>
-        </div>
-        <div id="mitreContent">
+      <!-- Drag Resizer Handle 2 -->
+      <div class="resizer" id="resizer2"></div>
+
+      <!-- Right Pane: Architectural Context Index -->
+      <div class="ide-pane context-pane" id="pane3">
+        <div class="pane-header">ARCHITECTURAL CONTEXT INDEX</div>
+        <div class="pane-content context-content-box" id="contextViewer">
           <!-- Rendered by app.js -->
         </div>
       </div>
 
-      <!-- Log Sample Inspector View -->
-      <div class="view-panel" id="logView" style="display: none;">
-        <div class="domain-header">
-          <h2>EVTX Sample Log Analysis</h2>
-          <p>Extracted event records from tutto_malseclogon.evtx (Secondary Logon attack sample).</p>
-        </div>
-        <div id="logContent">
-          <!-- Rendered by app.js -->
+    </div>
+
+    <!-- Log Converter View -->
+    <div class="ide-workspace converter-workspace" id="logView" style="display: none;">
+      
+      <!-- Converter Input Pane -->
+      <div class="ide-pane converter-input-pane" id="converterPaneLeft">
+        <div class="pane-header">LOG INGESTION</div>
+        <div class="pane-content">
+          <div class="dropzone" id="logDropzone">
+            <div class="dropzone-title">DROP LOG FILE HERE</div>
+            <div class="dropzone-subtext">Supports .evtx, .json, .csv, .log</div>
+            <div class="file-input-wrapper">
+              <input type="file" id="logFileInput" accept=".evtx,.json,.csv,.log,.txt" class="direct-file-input">
+            </div>
+          </div>
+
+          <div id="converterStatus" class="status-banner" style="display: none;"></div>
         </div>
       </div>
 
-    </main>
+      <!-- Drag Resizer Handle Converter -->
+      <div class="resizer" id="resizerConverter"></div>
+
+      <!-- Converter Output Pane -->
+      <div class="ide-pane converter-output-pane" id="converterPaneRight">
+        <div class="pane-header pane-header-flex">
+          <span>CONVERTED TELEMETRY OUTPUT</span>
+          <div class="btn-group">
+            <button class="format-pill active" id="pillJson">JSON</button>
+            <button class="format-pill" id="pillCsv">CSV</button>
+            <button id="btnDownloadJson" class="btn-secondary" disabled>Download JSON</button>
+            <button id="btnDownloadCsv" class="btn-secondary" disabled>Download CSV</button>
+          </div>
+        </div>
+        <div class="pane-content code-content-box">
+          <pre class="code-block"><code id="normalizedJsonCode">// Select or drop a log file to start telemetry conversion...</code></pre>
+        </div>
+      </div>
+
+    </div>
+
   </div>
+
+  <!-- Bottom Application Footer Status Bar -->
+  <footer class="footer">
+    <div class="footer-status">System Engine Online | Telemetry Pipeline Connected</div>
+    <div class="footer-user">Operated by: Manjil Katuwal | Security Engineer</div>
+  </footer>
 
   <script src="app.js"></script>
 </body>
