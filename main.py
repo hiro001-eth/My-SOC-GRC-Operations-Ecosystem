@@ -399,17 +399,33 @@ class SOCEcosystemHandler(SimpleHTTPRequestHandler):
         self.wfile.write(json.dumps(data, indent=2).encode("utf-8"))
 
 def main():
+    port = PORT
+    server = None
+
+    for candidate_port in range(port, port + 10):
+        try:
+            server = ThreadedHTTPServer(("0.0.0.0", candidate_port), SOCEcosystemHandler)
+            port = candidate_port
+            break
+        except OSError as e:
+            if e.errno == 98:  # Address already in use
+                continue
+            else:
+                raise e
+
+    if not server:
+        print(f"[!] Error: Could not bind to any port in range {PORT}-{PORT+9}.")
+        sys.exit(1)
+
     print("=" * 80)
     print("  SOC & GRC ECOSYSTEM SERVER - LIGHT SKY BLUE LAB ENGINE")
     print("=" * 80)
     print(f"[*] Workspace Root   : {WORKSPACE_DIR}")
     print(f"[*] EVTX Parser      : {'ENABLED' if HAS_EVTX else 'DISABLED'}")
-    print(f"[*] Server Listening : http://localhost:{PORT}")
+    print(f"[*] Server Listening : http://localhost:{port}")
     print("=" * 80)
-    
-    server = ThreadedHTTPServer(("0.0.0.0", PORT), SOCEcosystemHandler)
 
-    web_url = f"http://localhost:{PORT}"
+    web_url = f"http://localhost:{port}"
     print(f"[+] Opening browser interface -> {web_url}")
     webbrowser.open(web_url)
 
